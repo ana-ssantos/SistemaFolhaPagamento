@@ -1,0 +1,35 @@
+package sistemaFolhaDePagamento;
+
+import javax.swing.JOptionPane;
+
+public class Colaborador {
+
+	public static void main(String[] args) {
+		double salarioBase = 2000.00;
+		
+		String registroColaborador = JOptionPane.showInputDialog(null,
+						"Insira o número de registro do colaborador...", 
+						"Folha de Pagamento - Colaborador",
+						2);
+		
+		String nomeColaborador = JOptionPane.showInputDialog(null,
+						"Insira o nome completo do colaborador...",
+						"Nome do Colaborador",
+						2);
+		
+		
+		String[] tipoVinculo = {"Padrão", "Comissionado", "Produtividade"};
+		String selecaoVinculo =  (String)JOptionPane.showInputDialog(null,
+				"Selecione o tipo de vínculo...",
+				"Tipo de Vínculo do Colaborador: ",
+				JOptionPane.INFORMATION_MESSAGE, null,
+				tipoVinculo, tipoVinculo[0]);
+		
+		
+		System.out.println("Registro: " + registroColaborador);
+		System.out.println("Nome: " + nomeColaborador);
+		System.out.println("Tipo de vínculo: " + selecaoVinculo);
+
+	}
+
+}
