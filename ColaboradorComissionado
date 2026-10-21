@@ -1,0 +1,11 @@
+package sistemaFolhaDePagamento;
+
+public class ColaboradorComissionado {
+
+	int valorVendas;
+	double percentutalComissao;
+	
+
+
+
+}
