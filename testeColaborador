@@ -1,0 +1,14 @@
+package testes;
+
+public class Colaborador2 {
+	
+	private int matricula;
+	String nome;
+	double salarioBase;
+	
+	public static int salarioFinal(int a, int b) {
+		int resultado = a + b;
+		return resultado;
+	}
+}
+
