@@ -1,0 +1,18 @@
+package sistemaFolhaDePagamento;
+
+public class ColaboradorProducao {
+
+	int quantidadePecas;
+	double valorPorPeca;
+	double salarioBase = 2000.00;
+	
+	public double calcularProdutividade (double quantidadePecas, double valorPorPeca) {
+		double produtividade = quantidadePecas * valorPorPeca;
+		return produtividade;
+	}
+	public double calcularSalario (double produtividade, double salarioBase) {
+		double salarioFinal = produtividade + salarioBase;
+		return salarioFinal;
+	}
+	
+}
