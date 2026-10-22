@@ -1,1 +1,102 @@
+package sistemaFolhaDePagamento;
+import javax.swing.JOptionPane;
 
+public class SistemaFolha {
+
+    public static void main(String[] args) {
+        Colaborador[] colaboradores = new Colaborador[10];
+
+        for(int i=0;i<3;i++) {
+
+            String registro =
+                    JOptionPane.showInputDialog(
+                            "Registro");
+            String nome =
+                    JOptionPane.showInputDialog(
+                            "Nome");
+            String[] tipos = {
+                    "Padrão",
+                    "Comissionado",
+                    "Produtividade"
+            };
+
+            String tipo =
+                    (String) JOptionPane.showInputDialog(
+                            null,
+                            "Tipo",
+                            "Vínculo",
+                            JOptionPane.INFORMATION_MESSAGE,
+                            null,
+                            tipos,
+                            tipos[0]);
+
+            if(tipo.equals("Padrão")) {
+
+                colaboradores[i] =
+                        new ColaboradorPadrao(
+                                registro,
+                                nome);
+            }
+
+            else if(tipo.equals("Comissionado")) {
+
+                double vendas =
+                        Double.parseDouble(
+                                JOptionPane.showInputDialog(
+                                        "Valor das vendas"));
+
+                double percentual =
+                        Double.parseDouble(
+                                JOptionPane.showInputDialog(
+                                        "Percentual da comissão"));
+
+                colaboradores[i] =
+                        new ColaboradorComissionado(
+                                registro,
+                                nome,
+                                vendas,
+                                percentual);
+            }
+
+            else {
+
+                int pecas =
+                        Integer.parseInt(
+                                JOptionPane.showInputDialog(
+                                        "Quantidade de peças"));
+
+                double valorPeca =
+                        Double.parseDouble(
+                                JOptionPane.showInputDialog(
+                                        "Valor por peça"));
+
+                colaboradores[i] =
+                        new ColaboradorProducao(
+                                registro,
+                                nome,
+                                pecas,
+                                valorPeca);
+            }
+        }
+
+        System.out.println("RELATÓRIO");
+
+        for(Colaborador c : colaboradores) {
+
+            if(c != null) {
+
+                System.out.println(
+                        c.getRegistro());
+
+                System.out.println(
+                        c.getNome());
+
+                System.out.println(
+                        c.calcularSalario());
+
+                System.out.println(
+                        "---------------");
+            }
+        }
+    }
+}
