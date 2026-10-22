@@ -1,6 +1,7 @@
 # Projeto Sistema de Folha de Pagamento (UC Dual)
 
 Este projeto foi desenvolvido em Java para simular o cálculo de salários de diferentes tipos de colaboradores de uma empresa.
+IDE Utlizada -> Eclipse.
 
 O sistema permite cadastrar colaboradores, armazenar suas informações em um array e calcular o salário de acordo com o tipo de vínculo:
 - Colaborador Padrão
