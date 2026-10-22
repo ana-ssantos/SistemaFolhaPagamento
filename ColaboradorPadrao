@@ -1,30 +1,14 @@
 package sistemaFolhaDePagamento;
 
-public class ColaboradorComissionado extends Colaborador{
-
-	private double valorVendas;
-	private double percentualComissao;
+public class ColaboradorPadrao extends Colaborador {
 	
-	public ColaboradorComissionado (String registro,
-									String nome,
-									double valorVendas,
-									double percentualComissao) {
+	public ColaboradorPadrao (String registro, String nome) {
 		super(registro, nome);
-		
-		this.valorVendas = valorVendas;
-		this.percentualComissao = percentualComissao;
 	}
 	
-	
-	public double calcularComissao() {
-		return valorVendas * percentualComissao / 100;
+	@Override  //sobrescrevendo o método da classe mãe
+	public double calcularSalario() {
+		return salarioBase;
 	}
 	
-	@Override
-	public double calcularSalario () {
-		return salarioBase + calcularComissao();
-		
-	}
-
-
 }
