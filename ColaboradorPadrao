@@ -1,1 +1,30 @@
+package sistemaFolhaDePagamento;
 
+public class ColaboradorComissionado extends Colaborador{
+
+	private double valorVendas;
+	private double percentualComissao;
+	
+	public ColaboradorComissionado (String registro,
+									String nome,
+									double valorVendas,
+									double percentualComissao) {
+		super(registro, nome);
+		
+		this.valorVendas = valorVendas;
+		this.percentualComissao = percentualComissao;
+	}
+	
+	
+	public double calcularComissao() {
+		return valorVendas * percentualComissao / 100;
+	}
+	
+	@Override
+	public double calcularSalario () {
+		return salarioBase + calcularComissao();
+		
+	}
+
+
+}
